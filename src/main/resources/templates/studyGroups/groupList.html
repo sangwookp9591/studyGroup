@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"><!--JSP로 따지면 INCLUDE 하는것-->
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div class="list-group" data-spy="scroll">
+        <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">-->
+        <div th:each="member : ${members}">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>
+        </div>
+        <div>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>
+        </div>
+        <div>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>
+        </div>
+    </div>
+
+    <!--<div class="jumbotron">
+        <h1>HELLO SHOP</h1>
+        <p class="lead">회원 기능</p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/members/new">회원 가입</a>
+            <a class="btn btn-lg btn-secondary" href="/members">회원 목록</a>
+        </p>
+        <p class="lead">상품 기능</p>
+        <p>
+            <a class="btn btn-lg btn-dark" href="/items/new">상품 등록</a>
+            <a class="btn btn-lg btn-dark" href="/items">상품 목록</a>
+        </p>
+        <p class="lead">주문 기능</p>
+        <p>
+            <a class="btn btn-lg btn-info" href="/order">상품 주문</a>
+            <a class="btn btn-lg btn-info" href="/orders">주문 내역</a>
+        </p>
+    </div>-->
+
+    <div th:replace="fragments/footer :: footer" />
+
+</div> <!-- /container -->
+</body>
+</html>

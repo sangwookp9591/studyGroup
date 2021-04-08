@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+* {margin:0;padding:0; box-sizing:border-box;}
+
+body {
+    font-family: 'Anton', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("../../image/bg2.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: 0; left: 0;
+   /* background-color: rgba(0,0,0,.7);*/
+}
+
+.login-form {position: relative; z-index: 2;}
+.login-form h1 {
+    font-size: 32px; color: grey;
+    text-align: center;
+    margin-bottom: 60px;
+    text-shadow: 0px -1px rgba(0,0,0,0.44);/*텍스트가 버튼에 새겨져있는거같은 느낌*/
+}
+
+
+.int-area {width:400px; position: relative; margin-top: 20px}
+.int-area:first-child{margin-top: 0;}
+.int-area input {
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: black;
+    outline: none;
+}
+
+.int-area label {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px; color: #999;
+    transition: all .5s ease;
+}
+.int-area label.warning{
+    color: red !important;
+    animation: warning .3s ease;
+    animation-iteration-count: 3;
+
+}
+.int-area input:focus + label,
+.int-area input:valid + label {
+    top: -2px;
+    font-size: 13px; color: #166cea;
+}
+@keyframes warning {
+    0% {transform: translateX(-8px);}
+    25% {transform: translateX(8px);}
+    50% {transform: translateX(-8px);}
+    75% {transform: translateX(8px);}
+}
+.btn-area {margin-top:30px; display: inline-block;}
+/*.btn-area button {
+    width:100%; height: 50px;
+    background: #166cea;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}*/
+
+.caption{
+    margin-top: 20px;
+    text-align: center;
+
+}
+.caption a{
+    font-size: 15px; color: #999;
+    text-decoration: none;
+}
+.caption:hover{
+    font-size: 15px; color: #999;
+}
+
+
+/*버튼 만들기*/
+.btn{
+    text-decoration: none; /*밑줄제거*/
+    font-size:1.2rem; /*기본px 의 16px의 2배*/
+    color:white;
+    padding: 10px 20px 10px 20px;/*여백 top right bottom left*/
+    margin: 20px; /*위아래는 마진이 안먹음 a태그는 인라인 레벨이라서 마진값에 상하가 안먹는다*/
+    display: inline-block; /*block - 줄바꿈 줄바꿈 안되게할려면 inline block*/
+    border-radius: 10px;
+    transition:all 0.1s;/*버튼눌럿을때 이동을 부드럽게 하기위해서 장면전환*/ /*장면전환을 모든 속성에 대해서 변경되었을때 0.1초간 장면전환한다.*/
+    text-shadow: 0px -2px rgba(0,0,0,0.44);/*텍스트가 버튼에 새겨져있는거같은 느낌*/
+    font-family: 'Anton', sans-serif;
+    width: 70%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center
+}
+/*버튼이 눌렷을때*/
+.btn:active{
+    transform: translateY(5px); /*Y축으로 10PX*/
+}
+.btn.blue{
+    background-color: #1f75d9;
+    border-bottom:7px solid #165195; /*입체감을 위해서 설정*/
+}
+/*더입체적으로 보이게 하기 위해서 아래쪽 테두리를 얇게 하면 버튼이 눌리는것같은 느김을 많이줌*/
+.btn.blue:active{
+    border-bottom:2px solid #165195;
+}
+
+
+.btn.red{
+    background-color: #ff521e;
+    border-bottom:7px solid #c1370e; /*입체감을 위해서 설정*/
+}
+/*더입체적으로 보이게 하기 위해서 아래쪽 테두리를 얇게 하면 버튼이 눌리는것같은 느김을 많이줌*/
+.btn.red:active{
+    border-bottom:2px solid #c1370e;
+}
+
+
+.btnDiv{
+    width:100%;
+    text-align: center;
+}
+
+
