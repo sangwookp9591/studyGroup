@@ -1,35 +1,30 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><!--JSP로 따지면 INCLUDE 하는것-->
+<head th:replace="fragments/header :: header"><!--JSP로 따지면 INCLUDE 하는것-->
     <title>Hello</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/custom/style.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom/join.css}">
-    <script
-            src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="joinContainer">
     <div class="title">Registration</div>
-    <form action="/member/join" method="post" th:object="${memberForm}">
+    <form action="/member/join" method="post" th:object="${groupForm}">
         <div class="user-details">
             <div class="input-box">
-                <span class=""detatils>USER ID</span>
-                <input type="text" th:field="*{id}" placeholder="Enter your id" required>
+                <span class=""detatils>title</span>
+                <input type="text" th:field="*{title}" placeholder="Enter your id" required>
             </div>
 
             <div class="input-box">
-                <span class=""detatils>User name</span>
-                <input type="text" th:field="*{name}" placeholder="Enter your username" required>
+                <span class=""detatils>content</span>
+                <input type="text" th:field="*{content}" placeholder="Enter your username" required>
             </div>
 
             <div class="input-box">
-                <span class=""detatils>Password</span>
-                <input type="password" th:field="*{password}" placeholder="Enter your password" required>
+                <span class=""detatils>category</span>
+                <input type="text" th:field="*{category}" placeholder="Enter your password" required>
             </div>
-            <div class="input-box">
+            <!--<div class="input-box">
                 <span class=""detatils>Confirm Password</span>
                 <input type="password" placeholder="Confirm your password" required>
             </div>
@@ -58,7 +53,7 @@
                     </label>
                 </div>
 
-            </div>
+            </div>-->
         </div>
         <div class="btnDiv">
             <div class="btn-area">

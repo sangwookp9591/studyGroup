@@ -3,24 +3,31 @@
 <head th:replace="fragments/header :: header"><!--JSP로 따지면 INCLUDE 하는것-->
     <title>Hello</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom/style.css}">
 </head>
 <body>
 <div class="container">
 
     <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div class="select">
+        <input type="text">
+        <span>
+            <a class="btn blue" href="/group/new">등록</a>
+        </span>
+    </div>
     <div class="list-group" data-spy="scroll">
         <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">-->
-        <div th:each="member : ${members}">
+        <div th:each="group : ${groups}">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                 <span class=""detatils>이름: </span>
-                <span class="" th:text="${member.name}" name="name"></span>
+                <span class="" th:text="${group}" name="name"></span>
                 <span class="" style="float: right">
                     <small class="text-muted">3 days ago</small>
                 </span>
                 <br>
                 <span class=" w-100 ">주소: </span><span class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</span>
                 <br>
-                <small class=" w-100 ">연락처: </small><small class="text-muted" th:text="${member.phoneNumber}"></small>
+                <small class=" w-100 ">연락처: </small><small class="text-muted" th:text="${group}"></small>
             </a>
         </div>
     </div>

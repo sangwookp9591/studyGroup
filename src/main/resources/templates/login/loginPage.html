@@ -10,52 +10,52 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-    <section class="login-form">
-        <h1>STUDY GROUP</h1>
-        <form action="/login/loginChk" method="post">
-            <div class="int-area">
-                <input type="text" name="id" id="id"
-                        autocomplete="off" required>
-                <label for="id">USER NAME</label>
-            </div>
-            <div class="int-area">
-                <input type="password" name="pw" id="pw"
-                       autocomplete="off" required>
-                <label for="pw">PASSWORD</label>
-            </div>
-            <div class="btnDiv">
-                <div class="btn-area">
-                    <a class="btn blue" id="btn">LOGIN</a>
-                </div>
-                <div class="btn-area">
-                    <a class="btn red" id="join">JOIN</a>
-                </div>
-            </div>
-        </form>
-        <div class="caption">
-            <a href="">Forgot Password</a> <span style="color:white">
+<section class="login-form">
+    <h1>STUDY GROUP</h1>
+    <form action="/member/login" method="post" th:object="${memberLogin}">
+        <div class="int-area">
+            <input type="text" th:field="*{id}" name="id" id="id"
+                   autocomplete="off" required>
+            <label for="id">USER NAME</label>
         </div>
-    </section>
-    <script>
-        let id =$('#id');
-        let pw =$('#pw');
-        let btn =$('#btn');
+        <div class="int-area">
+            <input type="password" th:field="*{password}" name="pw" id="pw"
+                   autocomplete="off" required>
+            <label for="pw">PASSWORD</label>
+        </div>
+        <div class="btnDiv">
+            <div class="btn-area">
+                <button type="submit" class="btn blue" id="btn">LOGIN</button>
+            </div>
+            <div class="btn-area">
+                <button class="btn red" id="join" onclick="location.href='/member/new'">JOIN</button>
+            </div>
+        </div>
+    </form>
+    <div class="caption">
+        <a href="">Forgot Password</a> <span style="color:white"></span>
+    </div>
+</section>
+<script>
+    let id =$('#id');
+    let pw =$('#pw');
+    let btn =$('#btn');
 
-        $(btn).on('click',function (){
-            warningBinding(id,pw);
-        });
+    $(btn).on('click',function (){
+        warningBinding(id,pw);
+    });
 
-        function warningBinding(id,pw){
-            if($(id).val() ==""){
-                $(id).next('label').addClass('warning');
-                setTimeout(function(){
-                    $('label').removeClass('warning')
-                },1500)
-            } else if($(pw).val() == ""){
-                $(pw).next('label').addClass('warning');
-            }
+    function warningBinding(id,pw){
+        if($(id).val() ==""){
+            $(id).next('label').addClass('warning');
+            setTimeout(function(){
+                $('label').removeClass('warning')
+            },1500)
+        } else if($(pw).val() == ""){
+            $(pw).next('label').addClass('warning');
         }
-    </script>
+    }
+</script>
 </body>
 
 
